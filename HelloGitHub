@@ -1,0 +1,40 @@
+//冒泡排序,每轮排出一个元素
+//5个元素时
+//轮                次数
+//1      4
+//2      3
+//3      2
+//4      1
+import java.util.Scanner;
+public class MaoPao{
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		int num;
+		System.out.print("请输入待排序的数字个数：");
+		num=input.nextInt();
+		int[] list=new int[num];
+		for(int i=0;i<num;i++){
+			System.out.print("请输入第"+(i+1)+"个整数：");
+			list[i]=input.nextInt();
+		}
+		System.out.println("**********排序前数列**********");
+		for(int i=0;i<num;i++){
+			System.out.print(list[i]+"\t");
+		}
+		//冒泡排序
+		int temp=0;
+		for(int i=0;i<num-1;i++){
+			for(int j=0;j<num-i-1;j++){
+				if(list[j]>list[j+1]){
+					temp=list[j];
+					list[j]=list[j+1];
+					list[j+1]=temp;
+				}
+			}
+		}
+		System.out.println("\n**********排序结果(升序)**********");
+		for(int i=0;i<num;i++){
+			System.out.print(list[i]+"\t");
+		}
+	}
+}
